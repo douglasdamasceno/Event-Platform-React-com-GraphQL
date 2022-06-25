@@ -25,7 +25,7 @@ type GetLessonsQueryResponse = {
 
 export default function Sidebar() {
   const { data } = useQuery<GetLessonsQueryResponse>(GET_LESSONS_QUERY);
-  console.log(data)
+  
   return (
     <aside className="w-[348px] bg-gray-700 p-6 border-l border-gray-600">
           <span className="font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block">
@@ -33,12 +33,15 @@ export default function Sidebar() {
           </span>
 
           <div className="flex flex-col gap-8">
-            <Lesson
-                type="live"
-                availableAt={new Date()}
-                title="Abertura do evento Ignite labs"
-                slug="abertura-do-evento-ignite-labs"
+            {data?.lessons.map(lesson => (
+              <Lesson
+                key={lesson.id}
+                type={lesson.lessonType}
+                availableAt={new Date(lesson.availableAt)}
+                title={lesson.title}
+                slug={lesson.slug}
               />
+            ))}
           </div>
     </aside>
   )
