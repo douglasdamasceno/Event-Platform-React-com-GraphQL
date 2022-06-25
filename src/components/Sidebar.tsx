@@ -8,13 +8,12 @@ export default function Sidebar() {
           </span>
 
           <div className="flex flex-col gap-8">
-              <Lesson/>
-              <Lesson/>
-              <Lesson/>
-              <Lesson/>
-              <Lesson/>
-              <Lesson/>
-              <Lesson/>
+            <Lesson
+                type="live"
+                availableAt={new Date()}
+                title="Abertura do evento Ignite labs"
+                slug="abertura-do-evento-ignite-labs"
+              />
           </div>
     </aside>
   )

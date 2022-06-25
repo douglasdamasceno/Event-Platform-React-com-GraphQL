@@ -11,7 +11,6 @@ export default function Event() {
             <Video />
             <Sidebar />
         </main>
-      <Lesson />
     </div>
   )
 }
