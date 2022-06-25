@@ -5,10 +5,12 @@ import Video from '../components/Video'
 
 export default function Event() {
    return (
-    <div>
-      <Header />
-      <Sidebar />
-      <Video />
+    <div className='flex flex-col min-h-screen'>
+        <Header />
+        <main className='flex flex-1'>
+            <Video />
+            <Sidebar />
+        </main>
       <Lesson />
     </div>
   )
