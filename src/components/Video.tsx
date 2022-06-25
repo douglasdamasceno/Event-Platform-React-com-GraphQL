@@ -1,4 +1,4 @@
-import { DefaultControls, Player, Youtube } from "@vime/react";
+import { DefaultControls, DefaultUi, Player, Youtube } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning,Image } from "phosphor-react";
 
 import '@vime/core/themes/default.css';
@@ -9,13 +9,12 @@ const GET_LESSON_BY_SLUG_QUERY = gql`
     lesson(where: {slug: $slug}) {
       title
       videoId
-      id
+      description
       teacher {
         bio
         avatarURL
         name
       }
-      description
     }
   }
 `
@@ -42,7 +41,8 @@ export default function Video(props: VideoProps) {
   const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY, {
     variables: {
       slug:props.lessonSlug,
-    }
+    },
+    fetchPolicy: 'no-cache'
   })
   if (!data) {
     return (
@@ -57,7 +57,7 @@ export default function Video(props: VideoProps) {
         <div className="h-full w-full max-w[1100px] max-h[60vh] aspect-video">
           <Player>
             <Youtube videoId={data.lesson.videoId} />
-            <DefaultControls />
+            <DefaultUi />
           </Player>
         </div>
       </div>
