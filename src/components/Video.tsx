@@ -1,4 +1,4 @@
-import { DefaultControls, DefaultUi, Player, Youtube } from "@vime/react";
+import { DefaultUi, Player, Youtube } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning,Image } from "phosphor-react";
 
 import '@vime/core/themes/default.css';
