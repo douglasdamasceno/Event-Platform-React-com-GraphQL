@@ -61,7 +61,7 @@ export default function Subscribe() {
                   </form>
               </div>
         </div>
-        <img src={ImgURL} />
+        <img src={ImgURL} className="mt-10" alt="PC" />
     </div>
   )
 }
