@@ -1,7 +1,7 @@
 import { useState, FormEvent } from "react";
 import { useNavigate } from 'react-router-dom';
 import Logo from "../components/Logo";
-import ImgURL from "/src/assets/code-mockup.png";
+import ImgURL from "../../src/assets/code-mockup.png";
 
 import { useCreateSubscriberMutation } from '../graphql/generated';
 
