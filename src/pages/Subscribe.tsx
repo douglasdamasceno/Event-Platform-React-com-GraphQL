@@ -12,7 +12,6 @@ export default function Subscribe() {
     
     async function handleSubscribe(event:FormEvent) {
         event.preventDefault();
-        console.log(name, email)
         await createSubscriber({
             variables:{
                 name,
